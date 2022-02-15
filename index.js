@@ -17,10 +17,9 @@ const publicDirectory = path.join(__dirname,'public')
 app.use('/',express.static(publicDirectory))
 
 io.on('connection',(socket) => {
-    console.log('A user connected!')
 
-    socket.on('formSubmitted',(message)=>{
-        socket.broadcast.emit('FORM',message.message)
+    socket.on('formSubmitted',(a)=>{
+        socket.broadcast.emit('FORM',a.text)
     })
     
 })

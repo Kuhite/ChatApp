@@ -2,11 +2,12 @@ const socket = io()
 
 const form = document.querySelector("#form");
 
-const message = document.querySelector("form-input").value;
 
 form.addEventListener('submit',(e) => {
     e.preventDefault();
-    socket.emit('formSubmitted',{message})
+    const message = document.querySelector("#form-input").value;
+   
+    socket.emit('formSubmitted',{text:message})
 })
 
 socket.on('FORM',(socket)=>{
