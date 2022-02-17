@@ -11,5 +11,10 @@ form.addEventListener('submit',(e) => {
 })
 
 socket.on('FORM',(socket)=>{
-    console.log(socket);
+    const newMessage = document.createElement('p');
+    const message = document.createTextNode(socket);
+    newMessage.appendChild(message);
+    const element = document.getElementById('message-board');
+    newMessage.classList.add("message");
+    element.appendChild(newMessage);
 })
