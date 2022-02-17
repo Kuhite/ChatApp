@@ -21,6 +21,11 @@ io.on('connection',(socket) => {
     socket.on('formSubmitted',(a)=>{
         socket.broadcast.emit('FORM',a.text)
     })
+
+    socket.on('joiningRoom',(room) => {
+        socket.join(room.room);
+        console.log(socket.rooms)
+    })
     
 })
 

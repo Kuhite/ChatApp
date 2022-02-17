@@ -18,3 +18,6 @@ socket.on('FORM',(socket)=>{
     newMessage.classList.add("message");
     element.appendChild(newMessage);
 })
+
+
+ socket.emit('joiningRoom',{room:'Room1'})
