@@ -22,9 +22,9 @@ io.on('connection',(socket) => {
         socket.broadcast.emit('FORM',a.text)
     })
 
-    socket.on('joiningRoom',(room) => {
-        socket.join(room.room);
-        
+    socket.on('joiningRoom',(socket) => {
+        socket.join(socket.room);
+        socket.emit('Roomjoined', {room: socket.room})
     })
     
 })
