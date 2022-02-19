@@ -1,29 +1,29 @@
 const socket = io()
 
 const form = document.querySelector("#form");
+const message = document.querySelector("#welcomeMessage");
+const room = document.querySelector("#room-name");
 
 
-form.addEventListener('submit',(e) => {
-    const roomNo = document.querySelector("#room-name").value;
-    console.log(roomNo)
-   
-    socket.emit('formSubmitted',{text:message});
-    socket.emit('joiningRoom',{room:roomNo})
-
-    form.removeEventListener('submit');
+form.addEventListener('submit',() => {
+    const roomNo = room.value;
+    socket.emit('joinRoom',roomNo);
+    removeEvent(roomNo);
 })
 
-// socket.on('FORM',(socket)=>{
-//     const newMessage = document.createElement('p');
-//     const message = document.createTextNode(socket);
-//     newMessage.appendChild(message);
-//     const element = document.getElementById('message-board');
-//     newMessage.classList.add("message");
-//     element.appendChild(newMessage);
-// })
 
 
-socket.on('Roomjoined',(socket)=>{
-    alert('You have joined', socket.room)
-    console.log(socket.rooms)
+const removeEvent  = form.removeEventListener('submit',(r) => {
+    const roomNo = r;
+    socket.emit('joinRoom',roomNo);
+ })
+
+
+
+socket.on('roomJoined',(room)=>{
+    console.log(room)
+    
+   
+    message.innerText = `Welcome to ${room}`
+    console.log(message)
 })

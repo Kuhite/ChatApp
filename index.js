@@ -18,14 +18,13 @@ app.use('/',express.static(publicDirectory))
 
 io.on('connection',(socket) => {
 
-    socket.on('formSubmitted',(a)=>{
-        socket.broadcast.emit('FORM',a.text)
+    socket.on('joinRoom',(room) => {     
+        socket.join(room);
+        socket.emit('roomJoined',room)
+        
     })
-
-    socket.on('joiningRoom',(socket) => {
-        socket.join(socket.room);
-        socket.emit('Roomjoined', {room: socket.room})
-    })
+  
+  
     
 })
 
