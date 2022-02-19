@@ -1,18 +1,48 @@
 *{
     font-family: 'Zen Kaku Gothic Antique', sans-serif;
 }
+
 body{
-    background-color: rgb(2, 2, 114);
+    background-color: rgb(1, 1, 112);
+}
+
+.heading{
+    text-align: center;
+    margin-top: 30px;
+    font-weight: bold;
     color:white;
 }
 
-#message-board{
-    width: 1000px;
-    height: 500px;
+.form-div{
+    width: 370px;
+    height: 350px;
+    margin: 20px auto;
+    background-color: rgb(136, 136, 136);
+    border-radius: 8px;
+    box-shadow: 3px 3px 3px rgb(86, 87, 99);
 }
 
-.message{
-    color:red;
-    width:500px;
-    font-size: 16px;
+form{
+    width: 370px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 0 25px;
+    
 }
+
+input{
+    width: 200px;
+    margin: 0 auto;
+    height:40px;
+    font-size: 19px;
+}
+
+button{
+    width:150px;
+    height:40px;
+    margin: 0 auto;
+
+}
+
