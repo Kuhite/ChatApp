@@ -25,8 +25,8 @@ io.on('connection',(socket) => {
         
     })
 
-    socket.on('messaging',()=>{
-        socket.emit('messaged')
+    socket.on('messaging',(m)=>{
+        socket.emit('messaged',m)
     })
   
 })
