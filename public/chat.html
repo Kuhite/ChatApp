@@ -17,10 +17,19 @@
     <body>
 
         <h1 style="color:white;">Chat Page</h1>
-        <h3 id="welcomeMessage" ></h3>
+   
+        <div id="target"></div><br>
+
+        <button  id="messageInput">Click me</button>
+
+        <script  id="message-template" type="text/html">   
+            <div>
+                <p>This is a message</p>
+            </div>
+        </script>
 
 
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
         <script src="/socket.io/socket.io.js"></script>
         <script src="socket.js"></script>
     </body>

@@ -6,6 +6,7 @@ body{
     background-color: rgb(1, 1, 112);
 }
 
+/* JOIN PAGE */
 .heading{
     text-align: center;
     margin-top: 30px;
@@ -17,7 +18,7 @@ body{
     width: 370px;
     height: 350px;
     margin: 20px auto;
-    background-color: rgb(136, 136, 136);
+    background-color: rgb(255, 255, 255);
     border-radius: 8px;
     box-shadow: 3px 3px 3px rgb(86, 87, 99);
 }
@@ -32,17 +33,29 @@ form{
     
 }
 
-input{
+.input{
     width: 200px;
     margin: 0 auto;
     height:40px;
     font-size: 19px;
+    border:none;
+    outline: none;
+    border-bottom: 2px solid rgb(128, 24, 41);
 }
 
-button{
-    width:150px;
-    height:40px;
+.form-submit{
+    width: 180px;
     margin: 0 auto;
-
+    height:50px;
+    text-align: center;
+    font-size: 19px;
+    border:none;
+    outline: none;
+    background-color: rgb(122, 0, 0);
+    color:white;
+    font-weight: bold;
+    border-radius: 4px;
 }
+
+/* CHAT APP */
 
