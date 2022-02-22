@@ -20,10 +20,11 @@ io.on('connection',(socket) => {
 
     socket.on('joinRoom',(room) => {     
         socket.join(room);
-        console.log(room)
+        console.log(socket.rooms)
         socket.emit('roomJoined',room)
         
     })
+  
 
     socket.on('messaging',(m)=>{
         socket.emit('messaged',m)

@@ -17,16 +17,16 @@
         <h1 class="heading">ChatApp</h1>
         
         <div class="form-div">
-            <form id="form" method="" action="./chat.html">
-                <input class="input" autocomplete="off" id="form-input" placeholder="Username">
-                <input class="input" autocomplete="off" id="room-name" placeholder="Room Name">
-                <button>Join/Create Room</button>
-            </form>
+         <form id="form" method="" action="./chat.html">
+            <input class="input" autocomplete="off" id="form-input" placeholder="Username" name="Username" required>
+            <input class="input" autocomplete="off" id="room-name" placeholder="Room Name" name ="room" required>
+            <button type="submit" id="formSubmit">Join/Create Room</button>
+         </form>
         </div>
        
 
         <script src="/socket.io/socket.io.js"></script>
-        <script src="socket.js"></script>
+        <script src="chat.js"></script>
 
     </body>
 </html>

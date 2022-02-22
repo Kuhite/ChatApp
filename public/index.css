@@ -57,5 +57,17 @@ form{
     border-radius: 4px;
 }
 
-/* CHAT APP */
+/* CHAT PAGE */
+#target{
+    width: 1000px;
+    height:400px;
+    overflow-y: auto;
+}
 
+
+.message{
+    padding:5x 15px 5px 5px;
+    background-color: white;
+    max-width: 300px;
+    width:auto;
+}
