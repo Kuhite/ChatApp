@@ -18,9 +18,10 @@ app.use('/',express.static(publicDirectory))
 
 io.on('connection',(socket) => {
 
-    socket.on('joinRoom',(room) => {     
-        socket.join(room.room);
-        socket.emit('roomJoined',{room});
+    socket.on('joinRoom',(room,user) => {  
+        
+        socket.join(room);
+        socket.emit('roomJoined',room, user);
         
     })
   
