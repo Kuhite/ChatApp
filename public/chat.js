@@ -1,24 +1,27 @@
+
+
 const socket = io()
 
-
-const room1 = window.location.href
-;const sendmessage = document.querySelector("#text");
-const template = document.querySelector("#message-template");
+const room1 = window.location.href;
+const sendmessage = document.querySelector("#text");
+const template = document.querySelector("#message-template").innerHTML;
 const welcomeMessage = document.querySelector("#welcome-template");
-const data = document.querySelector("#target");
+const chatbox = document.querySelector("#target");
 const message = document.querySelector("#message");
 
 const roomandUser = Qs.parse(room1,{});
 const {username , room} = roomandUser;
 
-sendmessage.onclick = () => {
-    console.log(roomandUser.room);
+sendmessage.onclick = (e) => {
+    e.preventDefault();
+    const messageToBeSent = message.value;
+    socket.emit('messaging',(messageToBeSent));
 }
 
 
 socket.on('messaged',(m)=>{
     const rendered = Mustache.render(template,{message:m});
-    data.insertAdjacentHTML('beforeend',rendered);
+    chatbox.insertAdjacentHTML('beforeend',rendered);
 })
 
 

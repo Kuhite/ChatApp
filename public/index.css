@@ -3,7 +3,7 @@
 }
 
 body{
-    background-color: rgb(1, 1, 112);
+    background-color: rgb(0, 0, 82);
 }
 
 /* JOIN PAGE */
@@ -70,4 +70,9 @@ form{
     background-color: white;
     max-width: 300px;
     width:auto;
+}
+
+.messaging-form{
+    width: 300px;
+    display: block;
 }
