@@ -10,12 +10,11 @@ const message = document.querySelector("#message");
 const roomandUser = Qs.parse(room1,{ignoreQueryPrefix :true});
 console.log(roomandUser);
 
-const{username,room} = roomandUser;
-socket.emit('joinRoom',room,username);
+const{username,roomname} = roomandUser;
+socket.emit('joinRoom',roomname);
 
-socket.on('roomJoined',(room,user) => {
-
-    const displayMessage = Mustache.render(welcomeMessage,{user:user , room:room})
+socket.on('roomJoined',() => {
+    const displayMessage = Mustache.render(welcomeMessage,{user:username , room:roomname})
     chatbox.insertAdjacentHTML('beforeend', displayMessage);
 })
 
