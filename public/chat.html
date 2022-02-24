@@ -16,18 +16,19 @@
 
     <body>
 
-        <h1 style="color:white;">Chat Page</h1>
+        <h1 id="room-name" style="color:white;"></h1>
    
         <div id="target"></div><br>
 
-    
+        <div class="messaging-box">
             <input id="message" autocomplete="off" type="text" placeholder="Enter message!" required >
-        <button id="text">asdf</button>
+            <button id="text">asdf</button>
+        </div>
         
         
         <script  id="message-template" type="text/html">   
             <div class="message-div">
-                <span class="message">{{message}}</span>
+                <span class="text-message">{{message}}</span>
             </div>
         </script>
 

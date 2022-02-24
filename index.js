@@ -24,12 +24,13 @@ io.on('connection',(socket) => {
         roomName = room;
         socket.join(room);
         socket.to(roomName).emit('roomJoined');
+        socket.emit('roomJoin')
         
     })
-  
 
     socket.on('messaging',(m)=>{
         socket.to(roomName).emit('messaged',m)
+        socket.emit('messaged',m);
     })
   
 })

@@ -81,19 +81,22 @@ form{
 /* CHAT PAGE */
 #target{
     width: 1000px;
-    height:400px;
+    height:500px;
     overflow-y: auto;
+    margin:20px auto;
+    background-color: rgb(248, 248, 248);
 }
 
+.messaging-box{
+ text-align: center;
+}
 
 .message{
     padding:5x 15px 5px 5px;
-    background-color: white;
     max-width: 300px;
     width:auto;
 }
 
-.messaging-form{
-    width: 300px;
-    display: block;
+#room-name{
+    text-align: center;
 }
