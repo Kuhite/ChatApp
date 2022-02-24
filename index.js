@@ -14,20 +14,22 @@ app.use(express.json());
 
 
 const publicDirectory = path.join(__dirname,'public')
-app.use('/',express.static(publicDirectory))
+app.use('/',express.static(publicDirectory));
+
+var roomName = '';
 
 io.on('connection',(socket) => {
 
     socket.on('joinRoom',(room) => {  
-        
+        roomName = room;
         socket.join(room);
-        socket.emit('roomJoined');
+        socket.to(roomName).emit('roomJoined');
         
     })
   
 
     socket.on('messaging',(m)=>{
-        socket.emit('messaged',m)
+        socket.to(roomName).emit('messaged',m)
     })
   
 })
