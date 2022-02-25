@@ -37,4 +37,9 @@ socket.on('messaged',(m)=>{
     chatbox.insertAdjacentHTML('beforeend',rendered);
 })
 
+window.addEventListener('beforeunload', (event) => {
+    event.preventDefault();
+    return event.returnValue='Are you sure you want to exit?';
+})
+
 
