@@ -29,7 +29,7 @@ socket.on('roomJoin',()=>{
 sendmessage.onclick = (e) => {
     e.preventDefault();
     const messageToBeSent = message.value;
-    socket.emit('messaging',(messageToBeSent));
+    socket.emit('messaging',({m:messageToBeSent,r:roomname}));
 }
 
 socket.on('messaged',(m)=>{
