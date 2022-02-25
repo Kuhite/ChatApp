@@ -21,8 +21,8 @@ app.use('/',express.static(publicDirectory));
 io.on('connection',(socket) => {
 
     socket.on('joinRoom',(room) => {  
-        socket.join(room);
-        socket.to(room).emit('roomJoined');
+        socket.join(room.r);                                    //r to indicate the room parameter from chat.js
+        socket.to(room.r).emit('roomJoined',room.u);            //u to indicate the user parameter from chat.js
         socket.emit('roomJoin')     
     })
 

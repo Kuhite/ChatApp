@@ -16,7 +16,11 @@
 
     <body>
 
-        <h1 id="room-name" style="color:white;"></h1>
+        <div class="heading">
+            <h1 id="room-name" style="color:white;"></h1>
+            <button id="leaveButton">Leave</button>
+        </div>
+        
    
         <div id="target"></div><br>
 
@@ -35,7 +39,7 @@
         <script id="welcome-template" type="text/html">
 
             <div>
-                <h3>{{user}} has joined {{room}}!</h3>
+                <h3>{{user}} has joined!</h3>
             </div>
 
 

@@ -6,16 +6,18 @@ const template = document.querySelector("#message-template").innerHTML;
 const welcomeMessage = document.querySelector("#welcome-template").innerHTML;
 const chatbox = document.querySelector("#target");
 const message = document.querySelector("#message");
-const RoomHeading = document.querySelector("#room-name")
+const RoomHeading = document.querySelector("#room-name");
+
+const leaveButton = document.querySelector
 
 
 //Obtaining username and room from url
 const roomandUser = Qs.parse(room1,{ignoreQueryPrefix :true});
 const{username,roomname} = roomandUser;
-socket.emit('joinRoom',roomname);
+socket.emit('joinRoom',{u:username,r:roomname});
 
-socket.on('roomJoined',() => {
-    const displayMessage = Mustache.render(welcomeMessage,{user:username , room:roomname})
+socket.on('roomJoined',(name) => {
+    const displayMessage = Mustache.render(welcomeMessage,{user:name})
     chatbox.insertAdjacentHTML('beforeend', displayMessage);
 })
 
