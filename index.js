@@ -31,9 +31,13 @@ io.on('connection',(socket) => {
         socket.emit('messaged',m.m);
       
     })
+
+    socket.on('leaveRoom', (user)=>{
+        socket.leave(user.r)                                    //r to indicate the room parameter from chat.js
+        socket.emit('leftRoom' , user.u)                        //u to indicate the user parameter from chat.js
+    })
   
 })
-
 
 
 
