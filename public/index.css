@@ -7,7 +7,7 @@ body{
 }
 
 /* JOIN PAGE */
-.heading{
+.Title{
     text-align: center;
     margin-top: 100px;
     font-weight: bold;
@@ -23,7 +23,7 @@ body{
     box-shadow: 3px 3px 3px rgb(86, 87, 99);
 }
 
-form{
+#form{
     width: 300px;
     height: 350px;
     display: flex;
