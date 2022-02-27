@@ -151,7 +151,14 @@ body{
     width: 200px;
     height: 30px;
     margin: 10px auto;
-    color: rgb(122, 0, 0);
-    
+    color: rgb(29, 78, 0);
+    text-align: center;
+}
+
+.leaving{
+    width: 200px;
+    height: 30px;
+    margin: 10px auto;
+    color: rgb(78, 0, 0);
     text-align: center;
 }

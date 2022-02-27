@@ -28,18 +28,23 @@ socket.on('roomJoin',()=>{
 //Socket function for messaging
 const message = document.querySelector("#message");
 const sendmessage = document.querySelector("#textButton");
-const template = document.querySelector("#message-template").innerText;
+const template = document.querySelector("#message-template").innerHTML;
 const chatbox = document.querySelector("#target");
+const templatetoMe = document.querySelector("#message-templateToMe").innerHTML;
 
 sendmessage.onclick = (e) => {
     e.preventDefault();
     const messageToBeSent = message.value;
-
-    socket.emit('messaging',({m:messageToBeSent,r:roomname}));
+    socket.emit('messaging',{m:messageToBeSent,r:roomname , u:username});
 }
 
-socket.on('messaged',(m)=>{
-    const rendered = Mustache.render(template,{message:m});
+socket.on('messaged',(info)=>{
+    const rendered = Mustache.render(template,{sender:info.user,message:info.message});
+    chatbox.insertAdjacentHTML('beforeend',rendered);
+})
+
+socket.on('messagToMe',(info)=>{
+    const rendered = Mustache.render(templatetoMe,{sender:"You", message:info.message});
     chatbox.insertAdjacentHTML('beforeend',rendered);
 })
 
