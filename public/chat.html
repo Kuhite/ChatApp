@@ -29,19 +29,20 @@
 
         <div class="messaging-box">
             <input id="message" autocomplete="off" type="text" placeholder="Enter message!" required >
-            <button id="text">asdf</button>
+            <button id="textButton"><img src="./assets/sendMessage.png"  style="width:45px; border-radius: 50%;"></button>
         </div>
         
         
         <script  id="message-template" type="text/html">   
             <div class="message-div">
+                <h5>{{username}}</h5>
                 <h6 class="text-message">{{message}}</h6>
             </div>
         </script>
 
         <script id="welcome-template" type="text/html">
-            <div>
-                <h6>{{user}} has joined!</h6>
+            <div class="welcome">
+                <h5><b>{{user}}</b> has joined!</h5>
             </div>
         </script>
 

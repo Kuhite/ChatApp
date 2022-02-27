@@ -34,7 +34,7 @@ io.on('connection',(socket) => {
 
     socket.on('leaveRoom', async (user)=>{
         await socket.to(user.r).emit('leftRoom', user.u);              //u to indicate the user parameter from chat.js
-        socket.leave(user.r);                                    //r to indicate the room parameter from chat.js
+        socket.leave(user.r);                                          //r to indicate the room parameter from chat.js
                       
     })
   

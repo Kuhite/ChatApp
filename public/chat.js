@@ -27,7 +27,7 @@ socket.on('roomJoin',()=>{
 
 //Socket function for messaging
 const message = document.querySelector("#message");
-const sendmessage = document.querySelector("#text");
+const sendmessage = document.querySelector("#textButton");
 const template = document.querySelector("#message-template").innerText;
 const chatbox = document.querySelector("#target");
 
@@ -44,13 +44,6 @@ socket.on('messaged',(m)=>{
 })
 
 
-
-// Preventing Leaving without warning
-
-window.addEventListener('beforeunload', (event) => {
-    event.preventDefault();
-    return event.returnValue='Are you sure you want to exit?';
-})
 
 // Leaving Rooms
 

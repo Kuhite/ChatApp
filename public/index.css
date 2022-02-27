@@ -120,14 +120,38 @@ body{
 
 .messaging-box{
  text-align: center;
+ 
 }
 
-.message{
-    padding:5x 15px 5px 5px;
-    max-width: 300px;
-    width:auto;
+#message{
+    border:none;
+    outline:none;
+    width: 500px; 
+    padding-left:10px;
+    height: 45px;
+    border: 2px;
+    font-size: 17px;
 }
 
 #room-name{
+    text-align: center;
+}
+
+#textButton{
+    border-radius: 50%;
+    border: none;
+    outline:none;
+    width: 45px;
+    background-color: transparent;
+    position: relative;
+    bottom:3px;
+}
+
+.welcome{
+    width: 200px;
+    height: 30px;
+    margin: 10px auto;
+    color: rgb(122, 0, 0);
+    
     text-align: center;
 }
