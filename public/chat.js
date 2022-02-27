@@ -43,8 +43,9 @@ socket.on('messaged',(info)=>{
     chatbox.insertAdjacentHTML('beforeend',rendered);
 })
 
-socket.on('messagToMe',(info)=>{
-    const rendered = Mustache.render(templatetoMe,{sender:"You", message:info.message});
+const you = "You";
+socket.on('messageToMe',(info)=>{
+    const rendered = Mustache.render(templatetoMe,{sender:you,message:info});
     chatbox.insertAdjacentHTML('beforeend',rendered);
 })
 

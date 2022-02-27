@@ -29,7 +29,7 @@ io.on('connection',(socket) => {
     socket.on('messaging',(info)=>{
         console.log(info); 
         socket.to(info.r).emit('messaged',{message:info.m, user:info.u})    // m to indicate the message sent from user 
-        socket.emit('messageToMe',{message:info.m});
+        socket.emit('messageToMe',info.m);
       
     })
 

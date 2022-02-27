@@ -32,27 +32,33 @@
             <button id="textButton"><img src="./assets/sendMessage.png"  style="width:45px; border-radius: 50%;"></button>
         </div>
         
-        
+         <!--MESSAGE TO OTHERS TEMPLATE-->
         <script  id="message-template" type="text/html">   
             <div class="message-div">
-                <h6>{{sender}}</h6>
-                <h6 class="text-message">{{message}}</h6>
-            </div>
-        </script>
-
-        <script  id="message-templateToMe" type="text/html">   
-            <div class="message-div">
-                <h6>{{sender}}</h6>
+                <p>{{sender}}</p>
                 <h5 class="text-message">{{message}}</h5>
             </div>
         </script>
 
+
+         <!-- MESSAGE TO SELF TEMPLATE-->
+        <script  id="message-templateToMe" type="text/html">   
+            <div class="message-div">
+                <p>{{sender}}</p>
+                <h5 class="text-message">{{message}}</h5>
+            </div>
+        </script>
+
+
+        <!-- WELCOME MESSAGE TEMPLATE-->
         <script id="welcome-template" type="text/html">
             <div class="welcome">
                 <h5><b>{{user}}</b> has joined!</h5>
             </div>
         </script>
 
+
+         <!-- LEAVING MESSAGE TEMPLATE-->
         <script  id="leaving-template" type="text/html">   
             <div class="leaving">
                 <h5 class="text-message"><b>{{username}}</b> left!</h5>
