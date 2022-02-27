@@ -35,6 +35,8 @@ const templatetoMe = document.querySelector("#message-templateToMe").innerHTML;
 sendmessage.onclick = (e) => {
     e.preventDefault();
     const messageToBeSent = message.value;
+    if(messageToBeSent === '')return alert('Input Empty!');
+    message.value='';
     socket.emit('messaging',{m:messageToBeSent,r:roomname , u:username});
 }
 

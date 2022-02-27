@@ -28,24 +28,25 @@
         <div id="target"></div><br>
 
         <div class="messaging-box">
-            <input id="message" autocomplete="off" type="text" placeholder="Enter message!" required>
+            <input id="message" autocomplete="off" type="text" placeholder="Enter message!">
             <button id="textButton"><img src="./assets/sendMessage.png"  style="width:45px; border-radius: 50%;"></button>
         </div>
         
          <!--MESSAGE TO OTHERS TEMPLATE-->
         <script  id="message-template" type="text/html">   
-            <div class="message-div">
-                <p>{{sender}}</p>
-                <h5 class="text-message">{{message}}</h5>
+            <div class="messageOthers">
+                <h5><b>{{sender}}</b></h5>
+                <h4 class="text-message">{{message}}</h4>
             </div>
         </script>
 
 
          <!-- MESSAGE TO SELF TEMPLATE-->
         <script  id="message-templateToMe" type="text/html">   
-            <div class="message-div">
-                <p>{{sender}}</p>
+            <div class="messageMe">
+                <h6><b>{{sender}}</b></h6>
                 <h5 class="text-message">{{message}}</h5>
+
             </div>
         </script>
 

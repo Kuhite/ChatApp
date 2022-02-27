@@ -162,3 +162,24 @@ body{
     color: rgb(78, 0, 0);
     text-align: center;
 }
+
+.messageMe{
+    margin-left:auto;
+    margin-right:11px;
+    margin-top: auto;
+    padding: 5px;
+    margin-bottom: 20px;
+    background: rgb(0, 104, 136);
+    overflow: auto;
+    color:white;
+
+}
+
+.messageMe p{
+    margin: 0px;
+}
+
+.text-message{
+    margin-left:2px;
+}
+
