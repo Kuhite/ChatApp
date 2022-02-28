@@ -63,20 +63,16 @@ socket.on('messageToMe',(info)=>{
     autoScroll();
 })
 
-
-
 // Leaving Rooms
 
 const leaveButton = document.querySelector('#leaveButton');
 const leaving = document.querySelector('#leaving-template').innerText;
 
 leaveButton.onclick = () => {
-    console.log('clicked!');
     socket.emit('leaveRoom', {u:username, r:roomname});
 }
 
 socket.on('leftRoom', (user) => {
-    console.log(user);
     const rendered = Mustache.render(leaving,{username:user});
     chatbox.insertAdjacentHTML('beforeend',rendered);
 })

@@ -179,8 +179,9 @@ body{
     text-align: center;
 }
 
+/* CSS FOR THE TEXT YOU SEND */
 .messageMe{
-    padding: 5px;
+    padding: 10px;
     margin-bottom: 20px;
     overflow: auto;
     color:white;
@@ -197,6 +198,28 @@ body{
     max-width: 400px;
     margin-left:auto;
     margin-right:11px;
+}
+
+/*CSS FOR THE TEXT OTHERS SEND*/
+.messageOthers{
+    padding: 10px;
+    margin-bottom: 20px;
+    overflow: auto;
+    color:white;
+    text-align: start;
+}
+
+.messageOthers-inner{
+    padding: 5px;
+    background: rgb(107, 52, 0);
+    border-radius: 5px;
+    text-align: start;
+    display: inline-block;
+    max-height: 350px;
+    min-width: 100px;
+    max-width: 400px;
+    margin-right:auto;
+    margin-left:11px;
 }
 
 .messageMe p{
