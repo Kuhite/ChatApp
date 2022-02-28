@@ -24,8 +24,9 @@
             
         </div>
         
-   
+ 
         <div id="target"></div><br>
+
 
         <div class="messaging-box">
             <input id="message" autocomplete="off" type="text" placeholder="Enter message!">
@@ -44,9 +45,10 @@
          <!-- MESSAGE TO SELF TEMPLATE-->
         <script  id="message-templateToMe" type="text/html">   
             <div class="messageMe">
-                <h6><b>{{sender}}</b></h6>
-                <h5 class="text-message">{{message}}</h5>
-
+                <div class ="messageMe-inner">
+                    <h6><b>{{sender}}</b></h6>
+                    <h5 class="text-message">{{message}}</h5>
+                </div>
             </div>
         </script>
 

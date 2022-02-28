@@ -32,13 +32,24 @@ const template = document.querySelector("#message-template").innerHTML;
 const chatbox = document.querySelector("#target");
 const templatetoMe = document.querySelector("#message-templateToMe").innerHTML;
 
-sendmessage.onclick = (e) => {
-    e.preventDefault();
+
+const sendingMessage = () => {
     const messageToBeSent = message.value;
     if(messageToBeSent === '')return alert('Input Empty!');
     message.value='';
     socket.emit('messaging',{m:messageToBeSent,r:roomname , u:username});
 }
+
+sendmessage.onclick = (e) => {
+    e.preventDefault();
+    sendingMessage();
+}
+
+message.addEventListener('keypress', (e) => {
+    if(e.key ==='Enter'){
+        sendingMessage();
+    }
+})
 
 socket.on('messaged',(info)=>{
     const rendered = Mustache.render(template,{sender:info.user,message:info.message});
@@ -49,6 +60,7 @@ const you = "You";
 socket.on('messageToMe',(info)=>{
     const rendered = Mustache.render(templatetoMe,{sender:you,message:info});
     chatbox.insertAdjacentHTML('beforeend',rendered);
+    autoScroll();
 })
 
 
@@ -70,4 +82,7 @@ socket.on('leftRoom', (user) => {
 })
 
 
-
+const autoScroll = () => {
+    var elem = document.querySelector('#target');
+    elem.scrollTop = elem.scrollHeight;
+  }
