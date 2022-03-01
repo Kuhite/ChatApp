@@ -1,4 +1,10 @@
+
 const socket = io()
+
+const autoScroll = () => {
+    var elem = document.querySelector('#target');
+    elem.scrollTop = elem.scrollHeight;
+  }
 
 //Obtaining username and room from url
 const url = location.search;
@@ -15,6 +21,7 @@ const welcomeMessage = document.querySelector("#welcome-template").innerText;
 socket.on('roomJoined',(name) => {
     const displayMessage = Mustache.render(welcomeMessage,{user:name})
     chatbox.insertAdjacentHTML('beforeend', displayMessage);
+    autoScroll();
 })
 
 //Function for Room Heading
@@ -75,10 +82,18 @@ leaveButton.onclick = () => {
 socket.on('leftRoom', (user) => {
     const rendered = Mustache.render(leaving,{username:user});
     chatbox.insertAdjacentHTML('beforeend',rendered);
+    autoScroll();
 })
 
 
-const autoScroll = () => {
-    var elem = document.querySelector('#target');
-    elem.scrollTop = elem.scrollHeight;
-  }
+// JS FOR THE EMOJI PICKER
+document.querySelector('emoji-picker').addEventListener('emoji-click', event => {document.querySelector('input').value += event.detail.unicode})
+
+document.querySelector('#emoji').addEventListener('click', ()=> {
+    var emoji =  document.querySelector('emoji-picker');
+    if(emoji.style.display !== 'block'){
+        emoji.style.display='block';
+    }else{
+        emoji.style.display='none';
+    }
+})
